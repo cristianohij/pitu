@@ -1,0 +1,126 @@
+Progresso
+Aula 01: concluída
+Aula 02: concluído
+Aula 03: 21:57
+
+Passwords do Curso:
+1) FOCO
+2) PERSISTÊNCIA
+3) ESTUDAR
+4) PRATICAR
+5) 
+6) 
+
+Links:
+- cliente git
+git-scm.com/downloads
+
+Comandos:
+git clone <url>
+
+npm init -y (cria projeto)
+npm install express (instala express)
+npm install typescript (tipagens)
+npm install @types/express (instala os types utilizados com express)
+
+- para trabalhar com MySQL
+npm install sequelize
+npm install @types/validator
+npm install mysql2
+
+- executa os pacotes, não instala como o npm
+npx create-react-app frontend
+
+yarn start (rodar aplicação frontend )
+
+Configuração do typescript:
+npx tsc --init (cria arquivo tscconfig.json, configurações)
+
+- alterar:
+"target": "es6"
+"outDir": "./dist" (arquivos compilados)
+"rootDir": "./src" (destino dos arquivos compilados)
+
+tsc (compila uma aplicação typescript par js; rodar na pasta da aplicação, ex: backend)
+
+OBS
+monorepo: respositório com mais de um projeto
+
+Axios: biblioteca para chamadas HTTP
+
+ReactBootstrap: biblioteca para construção e estilo de páginas web
+
+Styled Components: biblioteca que permite criar componentes estilizados
+
+Google AdSense: monetização com publicidade
+
+AWS é uma IaaS: infraestrutura como serviço
+
+
+
+Instalados no backend:
+
+npm install cors --save
+npm install @types/cors --save-dev
+
+yarn add react-router-dom
+yarn add axios
+yarn add react-bootstrap bootstrap
+yarn add node-sass@4.14.1
+yarn add styled-components
+
+
+-- Deploy --
+
+publicar no Reame o link do projeto em produção
+
+criar conta na AWS
+abrir o painel em:
+Computação -> Lightsail
+
+- criar uma nova instância
+- informar a localização: USA geralmente são as melhores
+- plataforma Linux, são mais baratas
+- esquema: Somente SO / Amazon Linux 2
+
+
+Linux na AWS:
+
+* baixar o nodejs
+curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+
+* instalar o nodejs
+sudo yum install -y nodejs
+
+* baixar e instalar o mysql
+sudo rpm -Uvh https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+sudo yum install mysql-community-server
+
+* registrar o mysql na inicialização do servidor
+sudo systemctl enable  mysqld
+
+* subir o mysql
+sudo systemctl start mysqld
+
+* obter a senha aleatória que o mysql gerou?
+sudo grep 'temporary password' /var/log/mysqld.log
+
+Retornou: A temporary password is generated for root@localhost: E4-+tB<f,Fb7
+
+* aplicar a segurança no mysql, e definir uma nova senha
+sudo mysql_secure_installation
+
+Nova senha: #4294$$Admin*
+
+remover usuários anonimos: sim
+permitir somente acesso pela aws: sim
+remove base de teste: sim
+limpar cache: sim
+
+* conectar com o mysql 
+mysql -u root -p
+
+* criar o banco de dados
+create schema pitu;
+
+exit para sair do mysql
